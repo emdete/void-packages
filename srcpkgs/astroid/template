@@ -1,0 +1,25 @@
+# Template file for 'astroid'
+pkgname="astroid"
+version="0.6"
+revision="1"
+build_style="scons"
+short_desc="Graphical lightweight and fast email client for notmuch"
+maintainer="M. Dietrich <mdt@pyneo.org>"
+license="GPL-3"
+homepage="https://github.com/astroidmail/astroid"
+distfiles="https://github.com/astroidmail/astroid/archive/v${version}.tar.gz"
+checksum="b91e846bb009b7770a5161ce323c6ac729592ce12e3ed697f9b435b587dd31b4"
+depends="libnotmuch webkitgtk boost libsass libpeas notmuch gtkmm"
+makedepends="gcc-c++ git pkg-config scons gobject-introspection boost-devel gmime-devel gtkmm-devel libnotmuch-devel libpeas-devel libsass-devel webkitgtk-devel"
+
+do_configure() {
+	true
+}
+
+do_build() {
+	scons --release=${version} --install-sandbox=${DESTDIR} --prefix=/usr
+}
+
+do_install() {
+	scons --release=${version} --install-sandbox=${DESTDIR} --prefix=/usr install
+}
