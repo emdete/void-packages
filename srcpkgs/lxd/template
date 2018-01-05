@@ -1,13 +1,13 @@
 # Template file for 'lxd'
 pkgname=lxd
 version=2.21
-revision=1
+revision=2
 build_style=go
 go_import_path="github.com/lxc/lxd"
 go_package="${go_import_path}/lxd ${go_import_path}/lxc"
 hostmakedepends="git bzr pkg-config"
 makedepends="lxc-devel acl-devel"
-depends="lxc liblxc acl acl-progs rsync squashfs-tools xz dnsmasq iptables"
+depends="liblxc acl acl-progs rsync squashfs-tools xz dnsmasq iptables"
 short_desc="LXD is a next generation system container manager"
 maintainer="iaroki <iaroki@protonmail.com>"
 license="Apache-2.0"
